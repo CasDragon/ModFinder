@@ -36,6 +36,24 @@
   },
 
   {
+    "Name": "Disable Cutscene Overlay",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "DisableCSO",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Github": {
+        "Owner": "thehambeard",
+        "RepoName": "RTDisableCutsceneOverlay"
+      }
+    },
+    "About": "Removes grainy annoying overlay during cutscenes. Option to keep the letterboxing though.",
+    "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/116",
+    "Tags": [ "Visuals" ]
+  },
+
+  {
     "Name": "Enhanced Controls",
     "Author": "AlterAsc",
     "Id": {
