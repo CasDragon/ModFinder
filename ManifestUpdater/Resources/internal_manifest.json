@@ -124,6 +124,23 @@
   },
 
   {
+    "Name": "Banters Diversity",
+    "Author": "juliabel",
+    "Id": {
+      "Id": "BantersDiversity",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "234"
+      }
+    },
+    "About": "Banters for the Banter God! Больше бантеров Богу Бантеров! ",
+    "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/234",
+    "Tags": [ "Utilities" ]
+  },
+  
+  {
     "Name": "Batteries in Pairs",
     "Author": "jonHinkerton",
     "Id": {
@@ -640,7 +657,24 @@
     "HomepageUrl": "https://github.com/microsoftenator2022/PlayerGenderOverride",
     "Tags": [ "Gameplay", "Utilities" ]
   },
-
+  
+  {
+    "Name": "Project BugFix",
+    "Author": "juliabel",
+    "Id": {
+      "Id": "ProjectBugFix",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "225"
+      }
+    },
+    "About": "Fixed some bugs, added some cut content, made some QoL changes. Any localization can use it. ",
+    "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/225",
+    "Tags": [ "Utilities" ]
+  },
+  
   {
     "Name": "Psykers Of The Expanse",
     "Author": "OdinThePine",
