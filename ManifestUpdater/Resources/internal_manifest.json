@@ -224,6 +224,23 @@
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/167",
         "Tags": [ "Utilities" ]
     },
+    
+    {
+        "Name": "Biomancy Plus",
+        "Author": "AdamMasher",
+        "Id": {
+            "Id": "MS_BiomancyPlus",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "332"
+            }
+        },
+        "About": "Biomancy on steroids, with some new talents and an ability.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/332",
+        "Tags": [ "Gameplay" ]
+    },
 
     {
         "Name": "Build All Projects",
@@ -641,6 +658,23 @@
     },
 
     {
+        "Name": "More Hair Colors",
+        "Author": "Ezfi",
+        "Id": {
+            "Id": "EzfiMoreHairColors",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "354"
+            }
+        },
+        "About": "Adds 21 new hair colors to the character creator.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/354",
+        "Tags": [ "Visuals" ]
+    },
+
+    {
         "Name": "No Capes",
         "Author": "jonHinkerton",
         "Id": {
@@ -965,6 +999,22 @@
         "About": "Unlock's Kibellah's first quick slot.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/198",
         "Tags": [ "Gameplay" ]
+    },
+    
+    {
+        "Name": "WASD Movement",
+        "Author": "ADDB",
+        "Id": {
+            "Id": "WASDMovement",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "334"
+            }
+        },
+        "About": "Move selected characters via WASD",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/334",
+        "Tags": [ "Utilities" ]
     }
-
 ]
