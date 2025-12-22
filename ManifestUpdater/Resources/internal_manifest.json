@@ -604,6 +604,23 @@
     },
 
     {
+        "Name": "Make-A-Blast",
+        "Author": "ToxicBulb",
+        "Id": {
+            "Id": "MakeABlast",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "385"
+            }
+        },
+        "About": "If you ever asked yourself Why I need to carry grenades to make a BOOM in Rogue Trader? You've came to right place! Make-A-Blast! mod features new weapons and items designed to bring you some funny moments of blowing stuff up",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/385",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "Medicae Archetype",
         "Author": "jonHinkerton",
         "Id": {
