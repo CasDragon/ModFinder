@@ -930,6 +930,23 @@
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/236",
         "Tags": [ "Gameplay" ]
     },
+    
+ {
+        "Name": "Rogue Trader Happier Endings",
+        "Author": "Gaius",
+        "Id": {
+            "Id": "RTCopiumEndings",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "399"
+            }
+        },
+        "About": "Changes the text for the Ending slides for many characters and factions.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/399",
+        "Tags": [ "Story" ]
+    },
 
     {
         "Name": "Skill Check Assistant",
