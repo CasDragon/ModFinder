@@ -107,6 +107,23 @@
     },
 
     {
+      "Name": "Armoury of the Expanse",
+      "Author": "OdinThePine",
+      "Id": {
+        "Id": "ArmouryOfTheExpanse",
+        "Type": "Owlcat"
+      },
+      "Service": {
+        "Nexus": {
+          "ModID": "400"
+        }
+      },
+      "About": "A collection of weapons and equipments with custom and vanilla assets",
+      "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/400",
+      "Tags": [ "Gameplay" ]
+    },    
+
+    {
         "Name": "Assassin Buffs",
         "Author": "Mawootad",
         "Id": {
