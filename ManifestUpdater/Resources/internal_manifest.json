@@ -604,6 +604,24 @@
     },
 
     {
+        "Name": "Kibellah Hairstyle Switch",
+        "Author": "DarthParametric",
+        "Id": {
+            "Id": "DPKibblesHairSwitch",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Github": {
+                "Owner": "DarthParametric",
+                "RepoName": "RT_Kibellah_Hairstyle_Switch",
+            }
+        },
+        "About": "Adds an option to swap Kibellah's bowl cut for something less terrible.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/407",
+        "Tags": [ "Visuals" ]
+    },
+
+    {
         "Name": "Little Birds",
         "Author": "jonHinkerton",
         "Id": {
