@@ -984,6 +984,24 @@
     },
     
     {
+        "Name": "Tabletop Miniature Bases",
+        "Author": "DarthParametric",
+        "Id": {
+            "Id": "DPTabletopMiniatureBases",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Github": {
+                "Owner": "DarthParametric",
+                "RepoName": "RT_Tabletop_Miniature_Bases_For_Inventory_Screen",
+            }
+        },
+        "About": "Replaces the flat holographic disc in the inventory and character creation screens with a classic tabletop-style miniature base.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/406",
+        "Tags": [ "Visuals" ]
+    },
+
+    {
         "Name": "Tech Priest Overhaul - New Origin - Pasqal Rework",
         "Author": "Nekrofancy",
         "Id": {
