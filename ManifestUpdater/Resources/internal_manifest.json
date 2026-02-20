@@ -260,6 +260,23 @@
     },
 
     {
+        "Name": "Body Guards",
+        "Author": "VesperDuck",
+        "Id": {
+            "Id": "BodyGuard",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "389"
+            }
+        },
+        "About": "Provides an AI controlled squad of Wardens who will follow and fight for you, and grow with you. For the Lord Captain.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/389",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "Build All Projects",
         "Author": "jonHinkerton",
         "Id": {
