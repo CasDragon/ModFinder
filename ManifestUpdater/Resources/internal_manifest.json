@@ -829,6 +829,23 @@
     },
 
     {
+        "Name": "Perils Be Damned",
+        "Author": "VesperDuck",
+        "Id": {
+            "Id": "PerilsBeDamned",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModId": "393"
+            }
+        },
+        "About": "Use your Psyker powers limitlessly without fear of your Psyker dropping dead because they continued to use their powers while the veil between the warp and reality thins. Go wild!",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/393",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "Playable X",
         "Author": "ADDB",
         "Id": {
