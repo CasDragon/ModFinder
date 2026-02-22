@@ -1034,6 +1034,24 @@
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/3",
         "Tags": [ "Gameplay", "Utilities" ]
     },
+
+    {
+        "Name": "Speech Mod",
+        "Author": "Osmodium",
+        "Id": {
+            "Id": "SpeechMod",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Osmodium",
+                "RepoName": "W40KRogueTraderSpeechMod"
+            }
+        },
+        "About": "This mod is made for Warhammer 40K: Rogue Trader and introduces TTS (TextToSpeech) in most places.",
+        "HomepageUrl": "https://github.com/Osmodium/W40KRogueTraderSpeechMod/",
+        "Tags": [ "Utilities" ]
+    },
     
     {
         "Name": "Tabletop Miniature Bases",
