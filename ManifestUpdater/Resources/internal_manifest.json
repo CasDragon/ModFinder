@@ -260,6 +260,23 @@
     },
 
     {
+        "Name": "Body Guards",
+        "Author": "VesperDuck",
+        "Id": {
+            "Id": "BodyGuard",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "389"
+            }
+        },
+        "About": "Provides an AI controlled squad of Wardens who will follow and fight for you, and grow with you. For the Lord Captain.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/389",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "Build All Projects",
         "Author": "jonHinkerton",
         "Id": {
@@ -808,6 +825,23 @@
         },
         "About": "Add new homebrewed, lore-friendly custom Origins - Pariah, Augmenticist.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/188",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Perils Be Damned",
+        "Author": "VesperDuck",
+        "Id": {
+            "Id": "PerilsBeDamned",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModId": "393"
+            }
+        },
+        "About": "Use your Psyker powers limitlessly without fear of your Psyker dropping dead because they continued to use their powers while the veil between the warp and reality thins. Go wild!",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/393",
         "Tags": [ "Gameplay" ]
     },
 
