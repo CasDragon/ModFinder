@@ -17,5 +17,7 @@
     UserInterface,
     Utilities,
     Visuals,
+    AICoded,
+    ModderResource,
   }
 }
