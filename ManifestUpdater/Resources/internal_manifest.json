@@ -1155,5 +1155,22 @@
         "About": "Move selected characters via WASD",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/334",
         "Tags": [ "Utilities" ]
+    },
+
+    {
+        "Name": "Weapon Asset Pack",
+        "Author": "DarthParametric",
+        "Id": {
+            "Id": "DPWeaponAssetPack",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "428"
+            }
+        },
+        "About": "Provides a collection of custom weapon prefabs that can be externally referenced by other RT mods.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/428",
+        "Tags": [ "ModderResource", "Visuals" ]
     }
 ]
