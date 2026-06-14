@@ -933,23 +933,6 @@
     },
 
     {
-        "Name": "Ravor Find Me A Heretic",
-        "Author": "jonHinkerton",
-        "Id": {
-            "Id": "jhFindAHeretic",
-            "Type": "Owlcat"
-        },
-        "Service": {
-            "Nexus": {
-                "ModID": "206"
-            }
-        },
-        "About": "Random encounter generator for retinue and space battles available on demand.",
-        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/206",
-        "Tags": [ "Gameplay" ]
-    },
-
-    {
         "Name": "Rechargeable Grenades",
         "Author": "Arkive",
         "Id": {
