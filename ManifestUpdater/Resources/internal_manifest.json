@@ -756,7 +756,7 @@
                 "RepoName": "NoAugmentNegativeEffects"
             }
         },
-        "About": "A mod for Rogue Trader which does the following: Removes all the negative effects of Augments in Rogue Tader. Removes the 'Positive Effects' header in the description of Augments.",
+        "About": "A mod for Rogue Trader that removes the negative effects of Augments.",
         "HomepageUrl": "https://github.com/Jace17/NoAugmentNegativeEffects",
         "Tags": [ "Gameplay" ]
     },
@@ -1015,6 +1015,24 @@
         },
         "About": "Reduces or removes the negative effects of several consumable combat drugs.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/236",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Reusable Items",
+        "Author": "GravitonGamer",
+        "Id": {
+            "Id": "RTReusableItems",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Github": {
+                "Owner": "Jace17",
+                "RepoName": "RTReusableItems"
+            }
+        },
+        "About": "A mod for Rogue Trader that makes all consumable items reusable after combat instead.",
+        "HomepageUrl": "https://github.com/Jace17/RTReusableItems",
         "Tags": [ "Gameplay" ]
     },
     
