@@ -744,6 +744,24 @@
     },
 
     {
+        "Name": "No Augment Negative Effects",
+        "Author": "GravitonGamer",
+        "Id": {
+            "Id": "NoAugmentNegativeEffects",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Github": {
+                "Owner": "Jace17",
+                "RepoName": "NoAugmentNegativeEffects"
+            }
+        },
+        "About": "A mod for Rogue Trader which does the following: Removes all the negative effects of Augments in Rogue Tader. Removes the 'Positive Effects' header in the description of Augments.",
+        "HomepageUrl": "https://github.com/Jace17/NoAugmentNegativeEffects",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "No Capes",
         "Author": "jonHinkerton",
         "Id": {
