@@ -604,23 +604,6 @@
     },
 
     {
-        "Name": "Human Weapons for Eldar",
-        "Author": "jonHinkerton",
-        "Id": {
-            "Id": "jhHumanWeaponProf",
-            "Type": "Owlcat"
-        },
-        "Service": {
-            "Nexus": {
-                "ModID": "197"
-            }
-        },
-        "About": "Human Weapon Proficiency talent for eldar companions.",
-        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/197",
-        "Tags": [ "Gameplay" ]
-    },
-
-    {
         "Name": "Kibellah Hairstyle Switch",
         "Author": "DarthParametric",
         "Id": {
