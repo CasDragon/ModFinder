@@ -380,6 +380,24 @@
     },
 
     {
+      "Name": "Deathwatch",
+      "Author": "Sternab",
+      "Id": {
+        "Id": "Deathwatch",
+        "Type": "Owlcat"
+      },
+      "Service": {
+            "Github": {
+                "Owner": "Sternab",
+                "RepoName": "RogueTrader-Deathwatch"
+            }
+      },
+      "About": "(AI Assisted) Play as a Space Marine! This mod allows you to create your Rogue Trader as a Space Marine, with correct scale, custom portraits, and more!",
+      "HomepageUrl": "https://github.com/Sternab/RogueTrader-Deathwatch",
+      "Tags": [ "Gameplay", "Content" ]
+    },   
+
+    {
         "Name": "Disable Cutscene Overlay",
         "Author": "Hambeard",
         "Id": {
