@@ -310,7 +310,25 @@
         "HomepageUrl": "https://github.com/alterasc/ChangeOrigin/",
         "Tags": [ "Gameplay", "Utilities" ]
     },
-
+    
+    {
+        "Name": "Chaos Encounters",
+        "Author": "Flenky",
+        "Id": {
+            "Id": "ChaosEncounters",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Github": {
+                "Owner": "Flenky85",
+                "RepoName": "ChaosEncounters"
+            }
+        },
+        "About": "Randomizes combat encounters by applying one tactical mechanic per battle, forcing the player to adapt.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/534",
+        "Tags": [ "Gameplay", "Homebrew", "AICoded" ]
+    },
+    
     {
         "Name": "Cold Trader Origin",
         "Author": "jonHinkerton",
