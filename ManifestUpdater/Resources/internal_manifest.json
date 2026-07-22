@@ -118,9 +118,9 @@
           "ModID": "400"
         }
       },
-      "About": "A collection of weapons and equipments with custom and vanilla assets",
+      "About": "A collection of 25+ new weapons and equipments with custom and vanilla assets",
       "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/400",
-      "Tags": [ "Gameplay" ]
+      "Tags": [ "Gameplay","Content" ]
     },    
 
     {
@@ -157,6 +157,23 @@
         "Tags": [ "Utilities" ]
     },
 
+    {
+        "Name": "Barely Sanctioned Cosmetics",
+        "Author": "OdinThePine",
+        "Id": {
+          "Id": "barelysanctionedcosmetics",
+          "Type": "Owlcat"
+        },
+        "Service": {
+          "Nexus": {
+            "ModID": "533"
+          }
+        },
+        "About": "Facepaints, tattoos and other questionable aesthetic decisions",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/533",
+        "Tags": [ "Visuals" ]
+    },
+    
     {
         "Name": "Batteries in Pairs",
         "Author": "jonHinkerton",
@@ -651,9 +668,9 @@
                 "ModID": "181"
             }
         },
-        "About": "This mod expands the selection of Homeworlds available during character creation by introducing 7 new custom options inspired by the game's original manuals. Each world is lore-friendly and emphasizes a specific playstyle or theme. ",
+        "About": "8 new lore-friendly Homeworlds available during character creation.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/181",
-        "Tags": [ "Content" ]
+        "Tags": [ "Gameplay", "Homebrew", "Content" ]
     },
 
     {
@@ -879,7 +896,7 @@
         },
         "About": "Add new homebrewed, lore-friendly custom Origins - Pariah, Augmenticist.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/188",
-        "Tags": [ "Gameplay" ]
+        "Tags": [ "Gameplay", "Homebrew", "Content" ]
     },
 
     {
@@ -964,9 +981,9 @@
           "ModID": "218"
         }
       },
-      "About": "Add Telekinesis, Electromancy, Excess psychic disciplines - and some Heretical reactivity",
+      "About": "Add Telekinesis, Electromancy, Excess, Fate, Decay psychic disciplines - and some Heretical reactivity",
       "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/218",
-      "Tags": [ "Gameplay" ]
+      "Tags": [ "Gameplay", "Homebrew", "Content" ]
     },
 
     {
