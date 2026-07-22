@@ -553,6 +553,23 @@
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/171",
         "Tags": [ "Utilities" ]
     },
+    
+    {
+        "Name": "Fix Dollroom Render Resolution",
+        "Author": "ADDB",
+        "Id": {
+            "Id": "ScalingFix",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "536"
+            }
+        },
+        "About": "The dollroom (inventory etc.) always renders at 1080p, independent of your native resolution. This mod changes it to instead use x times your native resolution (where x is configurable, default 1)",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/536",
+        "Tags": [ "Bugfix", "Visuals" ]
+    },
 
     {
         "Name": "Free Respec",
