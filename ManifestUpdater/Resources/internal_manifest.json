@@ -518,6 +518,23 @@
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/180",
         "Tags": [ "Content" ]
     },
+    
+    {
+        "Name": "Faster Area Loads",
+        "Author": "ADDB",
+        "Id": {
+            "Id": "FasterAreaLoads",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "526"
+            }
+        },
+        "About": "Decreases save/area load times.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/526",
+        "Tags": [ "Utilities", "Bugfix" ]
+    },
 
     {
         "Name": "Faster Loading Times",
