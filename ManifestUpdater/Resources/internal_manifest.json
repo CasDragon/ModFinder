@@ -743,6 +743,23 @@
     },
 
     {
+        "Name": "Maive Romance Mod",
+        "Author": "krypto5863",
+        "Id": {
+            "Id": "MaiveRomanceMod",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "538"
+            }
+        },
+        "About": "A complete romance for Maive. Featuring a small romance quest, a good bit of dialogue, and some special features, plus a whole new ending.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/538",
+        "Tags": [ "Romance" ]
+    },
+
+    {
         "Name": "Medicae Archetype",
         "Author": "jonHinkerton",
         "Id": {
@@ -811,6 +828,25 @@
         "About": "Adds 21 new hair colors to the character creator.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/354",
         "Tags": [ "Visuals" ]
+    },
+
+
+    {
+        "Name": "Multiplayer Stability",
+        "Author": "Sternab",
+        "Id": {
+            "Id": "MultiplayerStability",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Github": {
+                "Owner": "Sternab",
+                "RepoName": "MultiplayerStability"
+            }
+        },
+        "About": "It contains targeted fixes for reproduced desynchronization paths, diagnostics for unresolved cases, and faster save transfer between players.",
+        "HomepageUrl": "https://github.com/Sternab/MultiplayerStability",
+        "Tags": [ "Bugfix" ]
     },
 
     {
