@@ -415,6 +415,23 @@
     },
 
     {
+        "Name": "Custom NPC Portraits Rogue Traders",
+        "Author": "DarkStar40000 ",
+        "Id": {
+            "Id": "CustomNpcPortraits",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "438"
+            }
+        },
+        "About": "Separate mod to allow achievements while modded.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/438",
+        "Tags": [ "Portraits", "Visuals" ]
+    },
+
+    {
       "Name": "Deathwatch",
       "Author": "Sternab",
       "Id": {
