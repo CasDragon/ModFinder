@@ -107,6 +107,23 @@
     },
 
     {
+        "Name": "Argenta Romance",
+        "Author": "krypto5863",
+        "Id": {
+            "Id": "ArgentaRomance",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "578"
+            }
+        },
+        "About": "A very complicated mod to give Argenta a fully fledged romance with the RT, keeping her personality, convictions, and characterization as intact as possible.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/578",
+        "Tags": [ "Romance", "Content" ]
+    },
+
+    {
       "Name": "Armoury of the Expanse",
       "Author": "OdinThePine",
       "Id": {
