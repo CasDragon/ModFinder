@@ -623,6 +623,40 @@
     },
 
     {
+        "Name": "Fix Japanese - Katakana",
+        "Author": "hawchangJA",
+        "Id": {
+            "Id": "FixJapaneseKana",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "592"
+            }
+        },
+        "About": "Standardize the Japanese translation to Katakana and correct several mistranslations.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/592",
+        "Tags": [ "Gameplay", "Bugfix", "UserInterface", "Utilities" ]
+    },
+
+    {
+        "Name": "Fix Japanese - Kanji",
+        "Author": "hawchangJA",
+        "Id": {
+            "Id": "FixJapaneseKanji",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "593"
+            }
+        },
+        "About": "Standardize the Japanese translation to Kanji and correct several mistranslations.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/593",
+        "Tags": [ "Gameplay", "Bugfix", "UserInterface", "Utilities" ]
+    },
+
+    {
         "Name": "Flame Weapon Expert Fix",
         "Author": "Seroster",
         "Id": {
