@@ -606,6 +606,23 @@
     },
 
     {
+        "Name": "Fix Japanese",
+        "Author": "hawchangJA",
+        "Id": {
+            "Id": "FixJapanese",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "588"
+            }
+        },
+        "About": "Standardize the Japanese translation and correct several mistranslations.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/588",
+        "Tags": [ "Gameplay", "Bugfix", "UserInterface", "Utilities" ]
+    },
+
+    {
         "Name": "Flame Weapon Expert Fix",
         "Author": "Seroster",
         "Id": {
