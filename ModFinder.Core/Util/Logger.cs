@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
@@ -6,10 +6,10 @@ using System.Threading;
 
 namespace ModFinder.Util
 {
-  internal class Logger : IDisposable
+  public class Logger : IDisposable
   {
-    internal static readonly string LogFile = Path.Combine(Main.AppFolder, "Log.txt");
-    internal static Logger Log
+    public static readonly string LogFile = Path.Combine(Main.AppFolder, "Log.txt");
+    public static Logger Log
     {
       get
       {
@@ -19,12 +19,14 @@ namespace ModFinder.Util
     }
     private static Logger _log;
 
+    public static Action<string> OnError;
+
     private readonly CancellationTokenSource CancelTokenSource = new();
     private readonly BlockingCollection<string> LogQueue = new();
 
     private Logger()
     {
-      new Thread(new ThreadStart(() => ProcessLogs(CancelTokenSource.Token))).Start();
+      new Thread(new ThreadStart(() => ProcessLogs(CancelTokenSource.Token))) { IsBackground = true }.Start();
     }
 
     public void Info(string log)
@@ -44,7 +46,11 @@ namespace ModFinder.Util
       {
         LogQueue.Add($"[E] {e}");
       }
-      MainWindow.ShowError(log);
+      try
+      {
+        OnError?.Invoke(log);
+      }
+      catch { }
     }
 
     public void Verbose(string log)

@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualBasic.FileIO;
-using ModFinder.UI;
 using ModFinder.Util;
 using Newtonsoft.Json;
 using System;

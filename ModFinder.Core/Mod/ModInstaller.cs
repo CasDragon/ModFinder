@@ -1,4 +1,3 @@
-﻿using ModFinder.UI;
 using ModFinder.Util;
 using NexusModsNET;
 using NexusModsNET.DataModels;
@@ -17,8 +16,6 @@ namespace ModFinder.Mod
   /// </summary>
   public static class ModInstaller
   {
-    private static MainWindow Window;
-
     public static async Task<InstallResult> Install(ModViewModel viewModel, bool isUpdate)
     {
       switch (viewModel.ModId.Type)
@@ -48,11 +45,6 @@ namespace ModFinder.Mod
 
           break;
         case ModType.Portrait:
-          //cache system needs to be adapted to Owl/Portrait but i dont have knowledge of that code, better if Bubbles or Wolfie does it.
-          /*
-            return new(InstallState.Installed);
-          }*/
-
           if (viewModel.CanInstall)
           {
             return await InstallFromRemoteZip(viewModel, isUpdate);
@@ -65,7 +57,6 @@ namespace ModFinder.Mod
       {
         return new($"Currently {viewModel.ModId.Type} mods are not supported.");
       }
-
 
       if (!isUpdate && await ModCache.TryRestoreMod(viewModel.ModId))
       {
@@ -82,7 +73,6 @@ namespace ModFinder.Mod
 
     private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel, bool isUpdate)
     {
-
       var file = Path.GetTempFileName();
 
       string url;
@@ -92,7 +82,6 @@ namespace ModFinder.Mod
         if (string.IsNullOrWhiteSpace(key))
         {
           var expectedZipName = $"{viewModel.Manifest.Id.Id}-{viewModel.Latest.Version}.zip";
-          //example: https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror/releases/download/BubbleBuffs%2F5.0.0/BubbleBuffs-5.0.0.zip
           url = $"{viewModel.Manifest.Service.Nexus.DownloadMirror}/releases/download/{viewModel.Manifest.Id.Id}%2F{viewModel.Latest.Version}/{expectedZipName}";
         }
         else
@@ -134,10 +123,8 @@ namespace ModFinder.Mod
 
     private static ModType GetModTypeFromArchive(IArchive archive)
     {
-      //if (archive.Entries.Any(e => e.Key.Equals("Info.json", StringComparison.CurrentCultureIgnoreCase)))
       if (archive.Entries.FirstOrDefault(e => Path.GetFileName(e.Key).Equals("Info.json", StringComparison.OrdinalIgnoreCase)) != null)
         return ModType.UMM;
-      //if (archive.Entries.Any(e => e.Key.Equals("OwlcatModificationManifest.json", StringComparison.CurrentCultureIgnoreCase)))
       if (archive.Entries.FirstOrDefault(e => Path.GetFileName(e.Key).Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)) != null)
         return ModType.Owlcat;
       else return ModType.Portrait;
@@ -148,21 +135,12 @@ namespace ModFinder.Mod
     public static async Task<InstallResult> InstallFromZip(
       string path, ModViewModel viewModel = null, bool isUpdate = false)
     {
-      /*
-      var c = Path.GetExtension(path);
-      if (c != ".zip")
-      {
-        MessageBox.Show(Window, "Provided file is not a file format we currently support (" + c + ")", "Unsupported File", MessageBoxButton.OK);
-        return new(InstallState.None);
-      }*/
-
       InstallModManifest info;
 
       using var stream = File.OpenRead(path);
       using var archive = SharpCompress.Archives.ArchiveFactory.AutoFactory.Open(stream);
       ModType modType = viewModel == null ? GetModTypeFromArchive(archive) : viewModel.ModId.Type;
 
-      // If the mod is not in the first level folder in the zip we need to reach in and grab it
       string rootInZip = null;
 
       switch (modType)
@@ -179,34 +157,37 @@ namespace ModFinder.Mod
 
             var fullName = manifestEntry.Key;
             var fileName = Path.GetFileName(fullName);
-
             if (fullName != fileName)
             {
               int root = fullName.Length - fileName.Length;
               rootInZip = fullName[..root];
             }
 
-            var UMMManifest = IOTool.Read<UMMModInfo>(manifestEntry.OpenEntryStream());
-            info = new InstallModManifest(UMMManifest.Id, UMMManifest.Version);
+            var ummManifest = IOTool.Read<UMMModInfo>(manifestEntry.OpenEntryStream());
+            info = new InstallModManifest(ummManifest.Id, ummManifest.Version);
 
-            var manifest = viewModel?.Manifest ?? ModManifest.ForLocal(UMMManifest);
+            var manifest = viewModel?.Manifest ?? ModManifest.ForLocal(ummManifest);
             if (!ModDatabase.Instance.TryGet(manifest.Id, out viewModel))
             {
               viewModel = new(manifest);
               ModDatabase.Instance.Add(viewModel);
             }
 
+            viewModel.SetRequirements(ummManifest.Requirements);
             break;
           }
         case ModType.Owlcat:
           {
             var manifestEntry =
-              archive.Entries.FirstOrDefault(e =>
-                Path.GetFileName(e.Key).Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
+              archive.Entries.FirstOrDefault(e => Path.GetFileName(e.Key).Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
+
+            if (manifestEntry is null)
+            {
+              return new("Unable to find manifest.");
+            }
 
             var fullName = manifestEntry.Key;
             var fileName = Path.GetFileName(fullName);
-
             if (fullName != fileName)
             {
               int root = fullName.Length - fileName.Length;
@@ -244,27 +225,18 @@ namespace ModFinder.Mod
           }
       }
 
-
       if (viewModel is not null && viewModel.ModId.Id != info.ModId)
       {
         return new($"ModId mismatch. Found {viewModel.ModId.Id} but expected {info.ModId}");
       }
 
-      // Cache the current version
       if (isUpdate)
       {
         await ModCache.Cache(viewModel);
       }
 
-
       var destination = GetModPath(modType);
-      //  if (manifestEntry.FullName == manifestEntry.Name) ZIP can have different name from mod ID
-      {
-        Logger.Log.Verbose($"Creating mod directory. \"{destination}\"");
-        // Handle mods without a folder in the zip
-        destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
-        Logger.Log.Verbose($"Finished creating mod directory. \"{destination}\"");
-      }
+      destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
 
       static void ExtractInParts(string path, string destination)
       {
@@ -293,16 +265,12 @@ namespace ModFinder.Mod
             }
             catch (Exception ex)
             {
-              Logger.Log.Verbose("[Line 275] Destination is - " + destination.ToString());
-              Logger.Log.Verbose("[Line 276] File is - " + part.ToString());
-              Logger.Log.Verbose("[Line 277] Full path is - " + extPath.ToString());
               Logger.Log.Verbose(ex.ToString());
             }
           }
         }
       }
 
-      //Non-portrait mods just extract to the destination directory
       if (modType != ModType.Portrait)
       {
         try
@@ -369,12 +337,10 @@ namespace ModFinder.Mod
                 Overwrite = true
               });
             }
-
           });
         }
         catch (IOException ex)
         {
-          Logger.Log.Verbose("[Line 311] Destination is - " + destination.ToString());
           Logger.Log.Verbose(ex.ToString());
           ExtractInParts(path, destination);
         }
@@ -385,21 +351,19 @@ namespace ModFinder.Mod
       }
       else
       {
-        var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.RTDataDir, "Portraits"));
         var PortraitFolder = Path.Combine(Main.RTDataDir, "Portraits");
-        var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
+        var tmpFolder = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
         archive.ExtractToDirectory(tmpFolder);
         if (Directory.EnumerateDirectories(tmpFolder).Count() <= 1)
         {
           tmpFolder = Path.Combine(tmpFolder, "Portraits");
         }
 
-        //var folderToEnumerate = zip.Entries.Count > 1 ? zip.Entries : zip.Entries.FirstOrDefault(a => a.Name == "Portraits");
         foreach (var portraitFolder in Directory.EnumerateDirectories(tmpFolder))
         {
           var builtString = modFinderPrefix + Guid.NewGuid();
-          var earMark = new PortraitEarmark(path.Split('\\').Last()); //Put modid here
-          while (Directory.Exists(builtString))
+          var earMark = new PortraitEarmark(Path.GetFileName(path));
+          while (Directory.Exists(Path.Combine(PortraitFolder, builtString)))
           {
             builtString = modFinderPrefix + Guid.NewGuid();
           }
@@ -407,7 +371,7 @@ namespace ModFinder.Mod
           Directory.Move(portraitFolder, newPortraitFolderPath);
           ModFinder.Util.IOTool.Write(earMark, Path.Combine(newPortraitFolderPath, "Earmark.json"));
         }
-        Directory.Delete(tmpFolder);
+        Directory.Delete(tmpFolder, recursive: true);
       }
 
       if (viewModel != null)

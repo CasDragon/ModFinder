@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ModFinder.UI
+namespace ModFinder.Mod
 {
   // Supported columns for custom sorting
   internal enum SortColumn

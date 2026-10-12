@@ -1,4 +1,4 @@
-﻿using ModFinder.Util;
+using ModFinder.Util;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -38,6 +38,10 @@ namespace ModFinder.Mod
     {
       return IOTool.SafeGet(() => OwlcatSettings.EnabledModifications.Contains(uniqueId));
     }
+
+    public IReadOnlyList<string> All() => OwlcatSettings.EnabledModifications.AsReadOnly();
+
+    public int Count => OwlcatSettings.EnabledModifications.Count;
 
     private void Save()
     {

@@ -1,23 +1,18 @@
-﻿using ModFinder.Mod;
 using ModFinder.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 
-namespace ModFinder.UI
+namespace ModFinder.Mod
 {
   /// <summary>
   /// View model tracking the current mod state.
   /// </summary>
-  public class ModViewModel : DependencyObject, INotifyPropertyChanged
+  public class ModViewModel : INotifyPropertyChanged
   {
     private static readonly Regex stripHtml = new(@"<.*?>");
 
@@ -55,15 +50,28 @@ namespace ModFinder.UI
     public string EnabledText => Enabled ? "On" : "Off";
     public string Source => Manifest.Service.Name;
 
+    private bool _enabled;
     public bool Enabled
     {
-      get => (bool)GetValue(EnabledProperty);
+      get => _enabled;
       set
       {
-        //if (Enabled == value) return;
-        SetValue(EnabledProperty, value);
+        if (_enabled == value) return;
+        _enabled = value;
+        if (IsInstalled)
+        {
+          ModManagerService.SetModEnabled(ModId, value);
+        }
+        Changed(nameof(Enabled), nameof(EnabledText));
       }
     }
+
+    public void SetEnabledSilently(bool value)
+    {
+      _enabled = value;
+      Changed(nameof(Enabled), nameof(EnabledText));
+    }
+
     public bool IsInstalled => Status.Installed();
     public bool IsCached => ModCache.IsCached(ModId);
 
@@ -82,13 +90,11 @@ namespace ModFinder.UI
     public bool CanInstallOrDownload => InstallOrDownloadAvailable();
     public bool CanUninstall => IsInstalled && ModDir != null;
 
-    public Visibility UninstallVisibility => CanUninstall ? Visibility.Visible : Visibility.Collapsed;
-
+    public bool UninstallVisibility => CanUninstall;
     public bool HasHomepage => !string.IsNullOrEmpty(HomepageUrl);
-    public Visibility HomepageVisibility => HasHomepage ? Visibility.Visible : Visibility.Collapsed;
-
+    public bool HomepageVisibility => HasHomepage;
     public bool CanRollback => IsCached && IsInstalled;
-    public Visibility RollbackVisibility => CanRollback ? Visibility.Visible : Visibility.Collapsed;
+    public bool RollbackVisibility => CanRollback;
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
@@ -105,7 +111,7 @@ namespace ModFinder.UI
       get => _modDir;
       set
       {
-        if (_modDir is not null && _modDir.FullName == value.FullName)
+        if (_modDir is not null && _modDir.FullName == value?.FullName)
           return;
         _modDir = value;
         Changed(nameof(CanUninstall), nameof(UninstallVisibility));
@@ -115,26 +121,6 @@ namespace ModFinder.UI
     public ModId ModId => Manifest.Id;
     public ModType Type => ModId.Type;
     public string DescriptionAsText => stripHtml.Replace(Description, "");
-
-    private static DependencyProperty MakeProp<T>(string name, Action<ModViewModel, T> onChange)
-    {
-      return DependencyProperty.Register(name, typeof(T), typeof(ModViewModel),
-        new((sender, args) =>
-        {
-          if (sender is not ModViewModel self) return;
-          onChange(self, (T)args.NewValue);
-        })
-      );
-    }
-
-    public static readonly DependencyProperty EnabledProperty = MakeProp<bool>("Enabled", (self, enabled) =>
-    {
-      if (self.IsInstalled)
-      {
-        MainWindow.SetModEnabled(self, enabled);
-      }
-      self.Changed(nameof(EnabledText));
-    });
 
     public ModVersion InstalledVersion
     {
@@ -215,12 +201,12 @@ namespace ModFinder.UI
 
     public bool MatchesAuthor(string author)
     {
-      return Author is not null && Author.Contains(author, System.StringComparison.CurrentCultureIgnoreCase);
+      return Author is not null && Author.Contains(author, StringComparison.CurrentCultureIgnoreCase);
     }
 
     public bool MatchesName(string name)
     {
-      return Name is not null && Name.Contains(name, System.StringComparison.CurrentCultureIgnoreCase);
+      return Name is not null && Name.Contains(name, StringComparison.CurrentCultureIgnoreCase);
     }
 
     public bool HasTag(Tag tag)
@@ -400,10 +386,10 @@ namespace ModFinder.UI
         nameof(InstalledVersion));
     }
 
-    private void Changed(params string[] props)
+    public void Changed(params string[] props)
     {
       foreach (var prop in props)
-        PropertyChanged?.Invoke(this, new(prop));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
     }
     #endregion
   }

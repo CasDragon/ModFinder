@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace ModFinder.UI
+namespace ModFinder.Mod
 {
   public class ModDatabase : INotifyPropertyChanged
   {
     private readonly ObservableCollection<ModViewModel> All = new();
-    internal readonly ObservableCollection<ModViewModel> Installed = new();
+    public readonly ObservableCollection<ModViewModel> Installed = new();
     private readonly ObservableCollection<ModViewModel> Filtered = new();
     private readonly Dictionary<ModId, ModViewModel> Mods = new();
     private bool _ShowInstalled;
