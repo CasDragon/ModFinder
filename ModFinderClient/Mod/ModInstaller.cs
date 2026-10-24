@@ -395,7 +395,7 @@ namespace ModFinder.Mod
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.RTDataDir, "Portraits"));
         var PortraitFolder = Path.Combine(Main.RTDataDir, "Portraits");
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
-        archive.ExtractToDirectory(tmpFolder);
+        archive.WriteToDirectory(tmpFolder);
         if (Directory.EnumerateDirectories(tmpFolder).Count() <= 1)
         {
           tmpFolder = Path.Combine(tmpFolder, "Portraits");
