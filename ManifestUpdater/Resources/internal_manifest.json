@@ -1174,6 +1174,23 @@
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/236",
         "Tags": [ "Gameplay" ]
     },
+    
+    {
+        "Name": "Renegade Astartes",
+        "Author": "Ivam",
+        "Id": {
+            "Id": "RTAstartes",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "676"
+            }
+        },
+        "About": "Play Rogue Trader as a Renegade Space Marine: new talents, Chapter colour schemes and new power armours for loyal and heretic paths.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/676",
+        "Tags": [ "Content", "Gameplay", "Visuals", "AICoded" ]
+    },
 
     {
         "Name": "Reusable Items",
