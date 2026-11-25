@@ -520,6 +520,40 @@
     },
 
     {
+        "Name": "Expanded Canon Portraits",
+        "Author": "Expanded Canon",
+        "Id": {
+            "Id": "ExpandedCanonPortraits",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "698"
+            }
+        },
+        "About": "Gives a dialogue portrait to 374 NPCs who have none in the base game, each painted from the character's own 3D model.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/698",
+        "Tags": [ "Portraits", "Visuals" ]
+    },
+
+    {
+        "Name": "Expanded Canon Voices",
+        "Author": "Expanded Canon",
+        "Id": {
+            "Id": "ExpandedCanonVoices",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "702"
+            }
+        },
+        "About": "Twelve novels of silent text? Ain't nobody reading all that. Every dialogue line now has a voice: 46,000+ lines, 140+ hours, 159 AI voices, including your Lord Captain.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/702",
+        "Tags": [ "Audio", "Content" ]
+    },
+
+    {
         "Name": "Expanded Colony Projects",
         "Author": "jonHinkerton",
         "Id": {
